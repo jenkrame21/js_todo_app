@@ -15,12 +15,6 @@ function TodoForm(props) {
         setTodo('');
     };
 
-    // Ability to clear todo(s) on todo list
-    const handleClear = (event) => {
-        event.preventDefault();
-        // props.clear();
-    };
-
     return (
         <form onSubmit={handleSubmit}>
             <input
@@ -31,8 +25,7 @@ function TodoForm(props) {
                 placeholder="Enter Todo"
                 onChange={handleChange}
             />
-            <button className="addBtn">Add Todo</button>
-            <button onClick={handleClear}>Clear Completed</button>
+            <button className="addBtn">Add</button>
         </form>
     )
 }
