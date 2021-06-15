@@ -1,0 +1,13 @@
+html {
+  background-color: rgb(25, 55, 102);
+}
+
+.App {
+  text-align: center;
+}
+
+.App h1 {
+  color: #fff;
+  margin: 3rem 0;
+  font-size: 2rem;
+}
