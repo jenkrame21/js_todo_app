@@ -4,11 +4,54 @@ html {
 
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App h1 {
   color: #fff;
-  margin: 3rem 0;
+  margin: 3rem 0 0 0;
   font-size: 2rem;
   font-family: "Roboto", sans-serif;
+}
+
+/* Todo Form */
+
+form {
+  background-color: rgb(230, 230, 230);
+  padding: 2rem;
+  margin: 5rem;
+  border-radius: 12px;
+  width: 60%;
+}
+
+form input {
+  margin: 0 1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  width: 40%;
+}
+
+form button {
+  margin: 0 1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(25, 55, 102);
+  color: #fff;
+  text-transform: uppercase;
+  width: 12rem;
+  cursor: pointer;
+}
+
+.addBtn {
+  background-color: rgb(43, 170, 39);
+  transition: 0.4s ease-in-out;
+}
+
+.addBtn:hover {
+  background-color: rgb(80, 199, 76);
+  transition: 0.4s ease-in-out;
 }
