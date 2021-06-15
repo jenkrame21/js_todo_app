@@ -4,10 +4,111 @@ html {
 
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.App h1 {
+h1 {
   color: #fff;
-  margin: 3rem 0;
+  margin: 3rem 0 0 0;
   font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Todo Form */
+
+form {
+  background-color: rgb(230, 230, 230);
+  padding: 2rem;
+  margin: 2rem 5rem 5rem 5rem;
+  border-radius: 12px;
+  width: 60%;
+}
+
+form input {
+  padding: 1rem;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  width: 55%;
+}
+
+button {
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(25, 55, 102);
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.addBtn {
+  background-color: rgb(43, 170, 39);
+  transition: 0.4s ease-in-out;
+  border-radius: 0 5px 5px 0;
+  width: 5rem;
+}
+
+.addBtn:hover {
+  background-color: rgb(80, 199, 76);
+  transition: 0.4s ease-in-out;
+}
+
+.clearBtn {
+  background-color: rgb(173, 22, 22);
+  transition: 0.4s ease-in-out;
+  width: 12rem;
+}
+
+.clearBtn:hover {
+  background-color: rgb(182, 79, 79);
+  transition: 0.4s ease-in-out;
+}
+
+/* Todo List */
+
+.todoList {
+  background-color: rgb(230, 230, 230);
+  padding: 2rem;
+  margin: 2rem 5rem 5rem 5rem;
+  border-radius: 12px;
+  width: 60%;
+}
+
+.todoList h1 {
+  color: rgb(25, 55, 102);
+  margin: 0;
+}
+
+/* Todo */
+
+.todo {
+  padding: 2%;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 3rem auto;
+  background-color: rgb(46, 96, 175);
+  color: #fff;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  transition: 0.2s ease-in-out;
+}
+
+.done {
+  background-color: rgb(92, 140, 216);
+  transition: 0.2s ease-in-out;
+  color: #fff;
+  text-decoration: line-through;
+  font-style: italic;
+  border-radius: 8px;
 }
