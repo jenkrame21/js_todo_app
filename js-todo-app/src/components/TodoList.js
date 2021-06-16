@@ -1,24 +1,21 @@
 import React from 'react';
 import Todo from './Todo';
 
+function TodoList({ todos, setTodos }) {
 
-function TodoList(props) {
-
-    // Ability to clear todo(s) on todo list
-    const handleClear = (event) => {
-        event.preventDefault();
-        // props.clear();
+    const handleClear = () => {
+        
     };
 
     return (
-        <div className="todoList">
+        <div className="todoContainer">
             <h1>Todos List</h1>
-            {props.state.todos.map(todo => {
-                return (
-                    <Todo key={todo.id} todo={todo} toggle={props.toggle} />
-                )
-            })}
-            <button className="clearBtn" onClick={handleClear}>Delete All Done</button>
+            <ul className="todoList">
+                {todos.map((todo) => (
+                    <Todo key={todo.id} text={todo.text} setTodos={setTodos} todos={todos} todo={todo}/>
+                ))}
+                <button className="clearBtn">Delete All Done</button>
+            </ul>
         </div>
     )
 };
