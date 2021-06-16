@@ -25,7 +25,6 @@ function Todo({ text, todo, todos, setTodos }) {
                     <FontAwesomeIcon icon="check-square" />
                 </button>
                 <button onClick={handleDelete} className="trashBtn">
-                    <i className="fa-solid fa-trash"></i>
                     <FontAwesomeIcon icon="trash" />
                 </button>
             </div>
