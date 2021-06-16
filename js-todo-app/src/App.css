@@ -21,7 +21,7 @@ h1 {
 form {
   background-color: rgb(230, 230, 230);
   padding: 2rem;
-  margin: 2rem 5rem 5rem 5rem;
+  margin: 2rem 5rem 2rem 5rem;
   border-radius: 12px;
   width: 60%;
 }
@@ -30,7 +30,7 @@ form input {
   padding: 1rem;
   border: none;
   border-radius: 5px 0 0 5px;
-  width: 55%;
+  width: 80%;
 }
 
 button {
@@ -56,18 +56,16 @@ button {
   transition: 0.4s ease-in-out;
 }
 
-.clearBtn {
-  background-color: rgb(173, 22, 22);
-  transition: 0.4s ease-in-out;
-  width: 12rem;
-}
-
-.clearBtn:hover {
-  background-color: rgb(182, 79, 79);
-  transition: 0.4s ease-in-out;
-}
-
 /* Todo List */
+
+.todoContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .todoList {
   background-color: rgb(230, 230, 230);
@@ -82,6 +80,17 @@ button {
   margin: 0;
 }
 
+.clearBtn {
+  background-color: rgb(173, 22, 22);
+  transition: 0.4s ease-in-out;
+  width: 12rem;
+}
+
+.clearBtn:hover {
+  background-color: rgb(182, 79, 79);
+  transition: 0.4s ease-in-out;
+}
+
 /* Todo */
 
 .todo {
@@ -91,17 +100,16 @@ button {
   text-align: center;
   text-transform: uppercase;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 50%;
-  margin: 3rem auto;
+  width: 90%;
+  margin: 2rem auto;
   background-color: rgb(46, 96, 175);
   color: #fff;
   border-radius: 8px;
   font-family: "Roboto", sans-serif;
   transition: 0.2s ease-in-out;
+  cursor: initial;
 }
 
 .done {
@@ -111,4 +119,8 @@ button {
   text-decoration: line-through;
   font-style: italic;
   border-radius: 8px;
+}
+
+.doneBtn {
+  margin-right: 1rem;
 }
