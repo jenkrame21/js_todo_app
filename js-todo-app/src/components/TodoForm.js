@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function TodoForm({ inputText, setInputText, setTodos, todos }) {
+    const [errorMessage, setErrorMessage] = useState({});
 
     // Ability to change input
     const handleInputText = (event) => {
@@ -8,29 +10,60 @@ function TodoForm({ inputText, setInputText, setTodos, todos }) {
     };
 
     // Ability to submit todo to todo list
-    const handleSubmit = (event) => {
+    const handleClickSubmit = (event) => {
+        // Prevents refreshing
         event.preventDefault();
-        setTodos([
-            ...todos, {
-                text: inputText,
-                completed: false,
-                id: Math.floor(Math.random() * 10000)
-            }
-        ]);
-        setInputText('');
+
+        const isValid = formValidation();
+        if(isValid) {
+            // Creates 'todos' object in 'todos' array
+            setTodos([
+                ...todos, {
+                    name: inputText,
+                    done: false,
+                    id: Math.floor(Math.random() * 10000)
+                }
+            ]);
+            // Sets input to blank
+            setInputText('');
+        }
+    };
+
+    const formValidation = () => {
+        const errorMessage = {};
+        let isValid = true;
+
+        if(inputText.length === 0) {
+            errorMessage.noInputText = " Todo is required."
+            isValid = false;
+        }
+
+        if(inputText.trim().length > 15){
+            errorMessage.inputTextLong = " Todo is too long. Max characters is 15."
+            isValid = false;
+        }
+
+        setErrorMessage(errorMessage);
+        return isValid;
     };
 
     return (
-        <form>
+        <form onSubmit={handleClickSubmit}>
             <input
-                id="todo"
-                name="todo"
-                type="text"
+                id='todo'
+                name='todo'
+                type='text'
                 value={inputText}
-                placeholder="Enter Todo"
+                placeholder='Enter Todo'
                 onChange={handleInputText}
             />
-            <button className="addBtn" onClick={handleSubmit}>Add</button>
+            <button className='addBtn'>Add</button>
+            {Object.keys(errorMessage).map((key) => {
+                return <p className="errorMessage" key={key} style={{color : 'red'}}>
+                        <FontAwesomeIcon icon="exclamation-circle"/>
+                        {errorMessage[key]}
+                    </p>
+            })}
         </form>
     )
 }
