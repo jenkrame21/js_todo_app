@@ -1,5 +1,17 @@
+:root {
+  --primary-dark-blue: rgb(25, 55, 102);
+  --primary-blue: rgb(46, 96, 175);
+  --primary-light-blue: rgb(92, 140, 216);
+  --primary-white: rgb(255, 255, 255);
+  --primary-light-grey: rgb(230, 230, 230);
+  --primary-green: rgb(43, 170, 39);
+  --primary-light-green: rgb(80, 199, 76);
+  --primary-red: rgb(173, 22, 22);
+  --primary-light-red: rgb(182, 79, 79);
+}
+
 html {
-  background-color: rgb(25, 55, 102);
+  background-color: var(--primary-dark-blue);
 }
 
 .App {
@@ -10,7 +22,7 @@ html {
 }
 
 h1 {
-  color: #fff;
+  color: var(--primary-white);
   margin: 3rem 3rem 0 3rem;
   font-size: 2rem;
   font-family: "Roboto", sans-serif;
@@ -19,7 +31,7 @@ h1 {
 /* Todo Form */
 
 form {
-  background-color: rgb(230, 230, 230);
+  background-color: var(--primary-light-grey);
   padding: 2rem;
   margin: 2rem 5rem 2rem 5rem;
   border-radius: 12px;
@@ -37,22 +49,22 @@ button {
   padding: 1rem;
   border: none;
   border-radius: 5px;
-  background-color: rgb(25, 55, 102);
-  color: #fff;
+  background-color: var(--primary-dark-blue);
+  color: var(--primary-white);
   text-transform: uppercase;
   cursor: pointer;
   font-weight: bold;
 }
 
 .addBtn {
-  background-color: rgb(43, 170, 39);
+  background-color: var(--primary-green);
   transition: 0.4s ease-in-out;
   border-radius: 0 5px 5px 0;
   width: 5rem;
 }
 
 .addBtn:hover {
-  background-color: rgb(80, 199, 76);
+  background-color: var(--primary-light-green);
   transition: 0.4s ease-in-out;
 }
 
@@ -74,7 +86,7 @@ button {
 }
 
 .todoList {
-  background-color: rgb(230, 230, 230);
+  background-color: var(--primary-light-grey);
   padding: 2rem;
   margin: 2rem 5rem 5rem 5rem;
   border-radius: 12px;
@@ -82,7 +94,7 @@ button {
 }
 
 .todoList h1 {
-  color: rgb(25, 55, 102);
+  color: var(--primary-dark-blue);
   margin: 0;
 }
 
@@ -94,13 +106,13 @@ button {
 }
 
 .clearBtn {
-  background-color: rgb(173, 22, 22);
+  background-color: var(--primary-red);
   transition: 0.4s ease-in-out;
   width: 12rem;
 }
 
 .clearBtn:hover {
-  background-color: rgb(182, 79, 79);
+  background-color: var(--primary-light-red);
   transition: 0.4s ease-in-out;
 }
 
@@ -117,8 +129,8 @@ button {
   align-items: center;
   width: 90%;
   margin: 2rem auto;
-  background-color: rgb(46, 96, 175);
-  color: #fff;
+  background-color: var(--primary-blue);
+  color: var(--primary-white);
   border-radius: 8px;
   font-family: "Roboto", sans-serif;
   transition: 0.2s ease-in-out;
@@ -130,9 +142,9 @@ button {
 }
 
 .done {
-  background-color: rgb(92, 140, 216);
+  background-color: var(--primary-light-blue);
   transition: 0.2s ease-in-out;
-  color: #fff;
+  color: var(--primary-white);
   text-decoration: line-through;
   font-style: italic;
   border-radius: 8px;

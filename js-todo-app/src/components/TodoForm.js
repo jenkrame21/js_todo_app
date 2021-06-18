@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function TodoForm({ inputText, setInputText, setTodos, todos }) {
     const [errorMessage, setErrorMessage] = useState({});
 
-    // Ability to change input
+    // Ability to change input text
     const handleInputText = (event) => {
         setInputText(event.target.value);
     };
@@ -33,14 +33,14 @@ function TodoForm({ inputText, setInputText, setTodos, todos }) {
         let isValid = true;
 
         if(inputText.length === 0) {
-            errorMessage.noInputText = " Todo is required."
+            errorMessage.noInputText = ' Todo is required.'
             isValid = false;
-        }
+        };
 
         if(inputText.trim().length > 15){
-            errorMessage.inputTextLong = " Todo is too long. Max characters is 15."
+            errorMessage.inputTextLong = ' Todo is too long. Max characters is 15.'
             isValid = false;
-        }
+        };
 
         setErrorMessage(errorMessage);
         return isValid;
@@ -60,8 +60,8 @@ function TodoForm({ inputText, setInputText, setTodos, todos }) {
 
             {/* Shows error message when it meets formValidation error conditions */}
             {Object.keys(errorMessage).map((key) => {
-                return <p className="errorMessage" key={key} style={{color : 'red'}}>
-                        <FontAwesomeIcon icon="exclamation-circle"/>
+                return <p className='errorMessage' key={key} style={{color : 'red'}}>
+                        <FontAwesomeIcon icon='exclamation-circle'/>
                         {errorMessage[key]}
                     </p>
             })}
