@@ -56,6 +56,12 @@ button {
   transition: 0.4s ease-in-out;
 }
 
+.errorMessage {
+  margin: 1rem 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
 /* Todo List */
 
 .todoContainer {
