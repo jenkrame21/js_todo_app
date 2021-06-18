@@ -24,7 +24,7 @@ function Todo({ todo, todos, setTodos }) {
             <span className="todoItem">{todo.name}</span>
             <div>
                 <button onClick={handleCompleted} className="doneBtn">
-                    <FontAwesomeIcon key={todo.id} icon={todo.done ? "check-square" : "square"}/>
+                    <FontAwesomeIcon icon={todo.done ? "check-square" : "square"}/>
                 </button>
                 <button onClick={handleDelete} className="trashBtn">
                     <FontAwesomeIcon icon="trash" />
