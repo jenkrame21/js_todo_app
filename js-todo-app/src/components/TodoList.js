@@ -6,7 +6,6 @@ function TodoList({ todos, setTodos }) {
     // Removes all todos opposite of done === true
     const filterCompletedTodos = () => {
         setTodos(todos.filter((todo) => !todo.done));
-        // localStorage.removeItem('todos');
     };
 
     // Toggles between 'No Todos' if todos do not exist and shows 'Delete All Done' button when todos exist
