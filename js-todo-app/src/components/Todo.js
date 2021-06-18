@@ -19,21 +19,12 @@ function Todo({ todo, todos, setTodos }) {
         }));
     };
 
-    // const handleToggle = () => {
-    //     console.log(todos.done)
-    //     if(todos.done === false){
-    //         return <FontAwesomeIcon icon="square" />
-    //     } else {
-    //         return <FontAwesomeIcon icon="check-square" />
-    //     }
-    // }
-
     return (
-        <div className={`todo ${todo.done ? "done" : ""}`}>
+        <div key={todo.id} className={`todo ${todo.done ? "done" : ""}`}>
             <span className="todoItem">{todo.name}</span>
             <div>
                 <button onClick={handleCompleted} className="doneBtn">
-                    <FontAwesomeIcon icon="check-square" />
+                    <FontAwesomeIcon icon={todo.done ? "check-square" : "square"}/>
                 </button>
                 <button onClick={handleDelete} className="trashBtn">
                     <FontAwesomeIcon icon="trash" />
