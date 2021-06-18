@@ -11,7 +11,7 @@ html {
 
 h1 {
   color: #fff;
-  margin: 3rem 0 0 0;
+  margin: 3rem 3rem 0 3rem;
   font-size: 2rem;
   font-family: "Roboto", sans-serif;
 }
@@ -56,6 +56,12 @@ button {
   transition: 0.4s ease-in-out;
 }
 
+.errorMessage {
+  margin-top: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
 /* Todo List */
 
 .todoContainer {
@@ -80,6 +86,13 @@ button {
   margin: 0;
 }
 
+.todoList h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  color: rgb(128, 128, 128);
+  font-weight: bold;
+}
+
 .clearBtn {
   background-color: rgb(173, 22, 22);
   transition: 0.4s ease-in-out;
@@ -94,11 +107,11 @@ button {
 /* Todo */
 
 .todo {
-  padding: 2%;
+  padding: 1.3rem;
   font-weight: bold;
   cursor: pointer;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: capitalize;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -110,6 +123,10 @@ button {
   font-family: "Roboto", sans-serif;
   transition: 0.2s ease-in-out;
   cursor: initial;
+}
+
+.todo button {
+  padding: 0;
 }
 
 .done {
