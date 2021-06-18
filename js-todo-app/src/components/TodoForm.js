@@ -11,7 +11,6 @@ function TodoForm({ inputText, setInputText, setTodos, todos }) {
 
     // Ability to submit todo to todo list
     const handleClickSubmit = (event) => {
-        // Prevents refreshing
         event.preventDefault();
 
         const isValid = formValidation();
@@ -24,7 +23,6 @@ function TodoForm({ inputText, setInputText, setTodos, todos }) {
                     id: Math.floor(Math.random() * 10000)
                 }
             ]);
-            // Sets input to blank
             setInputText('');
         }
     };
@@ -59,6 +57,8 @@ function TodoForm({ inputText, setInputText, setTodos, todos }) {
                 onChange={handleInputText}
             />
             <button className='addBtn'>Add</button>
+
+            {/* Shows error message when it meets formValidation error conditions */}
             {Object.keys(errorMessage).map((key) => {
                 return <p className="errorMessage" key={key} style={{color : 'red'}}>
                         <FontAwesomeIcon icon="exclamation-circle"/>
