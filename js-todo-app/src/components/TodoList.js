@@ -8,6 +8,15 @@ function TodoList({ todos, setTodos }) {
         setTodos(todos.filter((todo) => !todo.done));
     };
 
+    const toggleDeleteAllCompletedBtn = () => {
+        if (!todos.length) {
+            return <h3>No Todos</h3>
+        }
+        if (todos) {
+            return <button onClick={filterCompletedTodos} className="clearBtn">Delete All Done</button>
+        }
+    };
+
     return (
         <div className="todoContainer">
             <h1>Todos List</h1>
@@ -15,7 +24,7 @@ function TodoList({ todos, setTodos }) {
                 {todos.map((todo) => (
                     <Todo key={todo.id} setTodos={setTodos} todos={todos} todo={todo}/>
                 ))}
-                <button onClick={filterCompletedTodos} className="clearBtn">Delete All Done</button>
+            {toggleDeleteAllCompletedBtn()}
             </ul>
         </div>
     )
