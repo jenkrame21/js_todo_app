@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <h1>What Todos Will You Get Done Today?</h1>
-      <TodoForm inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} saveLocalTodos={saveLocalTodos}/>
+      <TodoForm inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} />
       <TodoList setTodos={setTodos} todos={todos} />
     </div>
   );
