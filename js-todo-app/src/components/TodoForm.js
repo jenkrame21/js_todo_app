@@ -29,6 +29,7 @@ function TodoForm({ inputText, setInputText, setTodos, todos }) {
         }
     };
 
+    // Validates if inputText meets requirements and shows error messages
     const formValidation = () => {
         const errorMessage = {};
         let isValid = true;

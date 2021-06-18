@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Todo({ text, todo, todos, setTodos }) {
+function Todo({ todo, todos, setTodos }) {
 
     const handleDelete = () => {
         setTodos(todos.filter((el) => el.id !== todo.id))
@@ -11,15 +11,26 @@ function Todo({ text, todo, todos, setTodos }) {
         setTodos(todos.map((item) => {
             if(item.id === todo.id) {
                 return{
-                    ...item, completed: !item.completed,
+                    ...item, done: !item.done,
                 };
+            } else {
+                return item;
             }
         }));
     };
 
+    // const handleToggle = () => {
+    //     console.log(todos.done)
+    //     if(todos.done === false){
+    //         return <FontAwesomeIcon icon="square" />
+    //     } else {
+    //         return <FontAwesomeIcon icon="check-square" />
+    //     }
+    // }
+
     return (
-        <div className={`todo ${todo.completed ? "done" : ""}`}>
-            <span className="todoItem">{text}</span>
+        <div className={`todo ${todo.done ? "done" : ""}`}>
+            <span className="todoItem">{todo.name}</span>
             <div>
                 <button onClick={handleCompleted} className="doneBtn">
                     <FontAwesomeIcon icon="check-square" />

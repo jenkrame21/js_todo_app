@@ -3,8 +3,9 @@ import Todo from './Todo';
 
 function TodoList({ todos, setTodos }) {
 
-    const handleClear = () => {
-        
+    // Removes all todos opposite of done === true
+    const filterCompletedTodos = () => {
+        setTodos(todos.filter((todo) => !todo.done));
     };
 
     return (
@@ -12,9 +13,9 @@ function TodoList({ todos, setTodos }) {
             <h1>Todos List</h1>
             <ul className="todoList">
                 {todos.map((todo) => (
-                    <Todo key={todo.id} text={todo.text} setTodos={setTodos} todos={todos} todo={todo}/>
+                    <Todo key={todo.id} setTodos={setTodos} todos={todos} todo={todo}/>
                 ))}
-                <button className="clearBtn">Delete All Done</button>
+                <button onClick={filterCompletedTodos} className="clearBtn">Delete All Done</button>
             </ul>
         </div>
     )
