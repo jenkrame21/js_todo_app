@@ -3,6 +3,8 @@
   --primary-blue: rgb(46, 96, 175);
   --primary-light-blue: rgb(92, 140, 216);
   --primary-white: rgb(255, 255, 255);
+  --primary-dark-grey: rgb(85, 85, 85);
+  --primary-grey: rgb(180, 180, 180);
   --primary-light-grey: rgb(230, 230, 230);
   --primary-green: rgb(43, 170, 39);
   --primary-light-green: rgb(80, 199, 76);
@@ -10,9 +12,17 @@
   --primary-light-red: rgb(182, 79, 79);
 }
 
-html {
-  background-color: var(--primary-dark-blue);
+body {
+  background-image: url("./images/checkd_background-01.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+  width: 100%;
+  overflow-x: hidden;
 }
+
+/* App */
 
 .App {
   text-align: center;
@@ -21,11 +31,47 @@ html {
   align-items: center;
 }
 
+header {
+  width: 80%;
+  margin-bottom: 2rem;
+}
+
+.mainLogo {
+  width: 25%;
+  margin: 1rem 0;
+}
+
 h1 {
   color: var(--primary-white);
-  margin: 3rem 3rem 0 3rem;
+  margin: 2rem 3rem 0 3rem;
   font-size: 2rem;
   font-family: "Roboto", sans-serif;
+}
+
+h4 {
+  color: var(--primary-white);
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  margin: 0 2rem 0 2rem;
+}
+
+footer {
+  padding: 1rem;
+  width: 100%;
+}
+
+footer p {
+  font-family: "Roboto", sans-serif;
+  color: var(--primary-white);
+}
+
+/* Media Responsive - App */
+
+@media (max-width: 900px) {
+  .mainLogo {
+    width: 10rem;
+    margin-top: 2rem;
+  }
 }
 
 /* Todo Form */
@@ -40,9 +86,16 @@ form {
 
 form input {
   padding: 1rem;
-  border: none;
+  border: 3px solid var(--primary-white);
   border-radius: 5px 0 0 5px;
   width: 80%;
+  transition: 0.2s ease-in-out;
+  color: var(--primary-dark-grey);
+}
+
+form input:focus {
+  border: 3px solid var(--primary-blue);
+  transition: 0.2s ease-in-out;
 }
 
 button {
@@ -59,12 +112,14 @@ button {
 .addBtn {
   background-color: var(--primary-green);
   transition: 0.4s ease-in-out;
+  border: 3px solid var(--primary-green);
   border-radius: 0 5px 5px 0;
   width: 5rem;
 }
 
 .addBtn:hover {
   background-color: var(--primary-light-green);
+  border: 3px solid var(--primary-light-green);
   transition: 0.4s ease-in-out;
 }
 
@@ -72,6 +127,32 @@ button {
   margin-top: 1rem;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
+}
+
+/* Media Responsive - Todo Form */
+
+@media (max-width: 950px) {
+  form {
+    margin-top: 0.5rem;
+  }
+
+  form input {
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+
+  .addBtn {
+    border-radius: 5px;
+    width: 12rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 280px) {
+  .addBtn {
+    width: 10rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
 /* Todo List */
@@ -101,6 +182,7 @@ button {
 .todoList h3 {
   font-family: "Roboto", sans-serif;
   font-size: 2rem;
+  font-style: italic;
   color: rgb(128, 128, 128);
   font-weight: bold;
 }
@@ -109,11 +191,34 @@ button {
   background-color: var(--primary-red);
   transition: 0.4s ease-in-out;
   width: 12rem;
+  border: 3px solid var(--primary-red);
 }
 
 .clearBtn:hover {
   background-color: var(--primary-light-red);
+  border: 3px solid var(--primary-light-red);
   transition: 0.4s ease-in-out;
+}
+
+.greyClearBtn {
+  font-style: italic;
+  background-color: var(--primary-grey);
+  cursor: initial;
+}
+
+/* Media Responsive - Todo List */
+
+@media (max-width: 950px) {
+  .clearBtn {
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 280px) {
+  .clearBtn {
+    width: 10rem;
+    padding: 0.5rem 0;
+  }
 }
 
 /* Todo */
@@ -121,20 +226,28 @@ button {
 .todo {
   padding: 1.3rem;
   font-weight: bold;
-  cursor: pointer;
   text-align: center;
   text-transform: capitalize;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  margin: 2rem auto;
+  max-width: 90%;
+  margin: 0 auto 2rem auto;
   background-color: var(--primary-blue);
   color: var(--primary-white);
   border-radius: 8px;
   font-family: "Roboto", sans-serif;
   transition: 0.2s ease-in-out;
   cursor: initial;
+}
+
+.todo span {
+  text-align: left;
+  max-width: 80%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  line-height: normal;
+  hyphens: auto;
 }
 
 .todo button {
@@ -152,4 +265,12 @@ button {
 
 .doneBtn {
   margin-right: 1rem;
+}
+
+/* Media Responsive - Todo */
+
+@media (max-width: 950px) {
+  .todo span {
+    max-width: 60%;
+  }
 }
