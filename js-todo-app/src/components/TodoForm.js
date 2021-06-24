@@ -37,8 +37,8 @@ function TodoForm({ inputText, setInputText, setTodos, todos }) {
             isValid = false;
         };
 
-        if(inputText.trim().length > 15){
-            errorMessage.inputTextLong = ' Todo is too long. Max characters is 15.'
+        if(inputText.trim().length > 300){
+            errorMessage.inputTextLong = ' Todo is too long. Max characters is 300.'
             isValid = false;
         };
 
