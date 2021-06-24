@@ -23,14 +23,10 @@ function Todo({ todo, todos, setTodos }) {
 
     return (
         <div key={todo.id} className={`todo ${todo.done ? 'done' : ''}`}>
-            <span className='todoItem'>{todo.name}</span>
+            <span>{todo.name}</span>
             <div>
-                <button onClick={handleCompleted} className='doneBtn'>
-                    <FontAwesomeIcon icon={todo.done ? 'check-square' : 'square'}/>
-                </button>
-                <button onClick={handleDelete} className='trashBtn'>
-                    <FontAwesomeIcon icon='trash' />
-                </button>
+                <FontAwesomeIcon onClick={handleCompleted} className='doneBtn' icon={todo.done ? 'check-square' : 'square'}/>
+                <FontAwesomeIcon onClick={handleDelete} className='trashBtn' icon='trash' />
             </div>
         </div>
     )
